@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TravelGuide</title>
+  <!-- font Awsome Icons Link-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    integrity="sha512-rqQltXRuHxtPWhktpAZxLHUVJ3Eombn3hvk9PHjV/N5DMUYnzKPC1i3ub0mEXgFzsaZNeJcoE0YHq0j/GFsdGg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Custom Css -->
+  <link rel="stylesheet" href="./style.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- header Nav Bars -->
+  <header>
+    <div class="topnav">
+      <div class="container">
+        <ul class="list1">
+          <li><a href="#">My Account</a></li>
+          <select id="lang" name="lang">
+            <option value="English">English</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Spanish">Spanish</option>
+          </select>
+        </ul>
+        <ul class="list1">
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Signup</a></li>
+          <select id="lang" name="lang">
+            <option value="USD">USD</option>
+            <option value="INR">INR</option>
+            <option value="AUD">AUD</option>
+            <option value="CAD">CAD</option>
+          </select>
+        </ul>
+      </div>
+      <!-- <a href="#" class="menu-icon"><i class="fas fa-bars"></i></a> -->
+    </div>
+    <div class="navbar">
+      <div class="flex-container">
+        <h1 class="logo">
+          <a href="#"><img src="./images/logo.png" alt="Travel img" width="100" height="80"/></a>
+        </h1>
+        <ul class="list2">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Hotels</a></li>
+          <li><a href="#">Flights</a></li>
+          <li><a href="#">Cars</a></li>
+          <li><a href="#">Cruises</a></li>
+          <li><a href="#">Tour</a></li>
+        </ul>
+      </div>
+      <li class="bars" onclick="myNavbar()"><i class="fas fa-bars"></i></li>
+    </div>
+    <!-- Responsive Navbar -->
+    <div id="mynav" class="responsive-navbar">
+      <div class="res-list1">
+        <ul class="res">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Hotels</a></li>
+          <li><a href="#">Flights</a></li>
+          <li><a href="#">Cars</a></li>
+          <li><a href="#">Cruises</a></li>
+          <li><a href="#">Tour</a></li>
+        </ul>
+      </div>
+      <div class="res-list2">
+        <ul class="res1">
+          <li><a href="#">My Account</a></li>
+          <select id="lang" name="lang">
+            <option value="English">English</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Spanish">Spanish</option>
+          </select>
+        </ul>
+        <ul class="res1">
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Signup</a></li>
+          <select id="lang" name="lang">
+            <option value="USD">USD</option>
+            <option value="INR">INR</option>
+            <option value="AUD">AUD</option>
+            <option value="CAD">CAD</option>
+          </select>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!-- Carousel -->
+  <div class="slideshow-container">
+    <!-- Add SlideSHow Images -->
+    <div class="mySlide fade">
+      <img src="./images/SlideImages/travel_slide1.jpg" alt="SlideShow Image" width="100%" height="70%" />
+    </div>
+    <div class="mySlide fade">
+      <img src="./images/SlideImages/travel_slide2.jpg" alt="SlideShow Image" width="100%" height="70%" />
+    </div>
+    <div class="mySlide fade">
+      <img src="./images/SlideImages/travel_slide3.jpg" alt="SlideShow Image" width="100%" height="70%" />
+    </div>
+
+    <!-- Next And Previous Buttons  -->
+    <a class="prev" onclick="Slide(-1)">&#10094;</a>
+    <a class="next" onclick="Slide(1)">&#10095;</a>
+  </div>
+  <!-- Search Tabs -->
+  <!-- Tab Links -->
+  <div class="search-container">
+    <!-- Tab Links -->
+    <ul class="search-tab">
+      <li data-tab-target="#hotels-tab" class="active">Hotels</li>
+      <li data-tab-target="#flights-tab" class="">Flights</li>
+      <li data-tab-target="#flightandhotels-tab" class="">
+        Flight and Hotels
+      </li>
+      <li data-tab-target="#cars-tab" class="">Cars</li>
+      <li data-tab-target="#cruises-tab" class="">Cruises</li>
+      <li data-tab-target="#flightstatus-tab" class="">Flight status</li>
+      <li data-tab-target="#onlinecheckin-tab" class="">Online Check In</li>
+    </ul>
+    <!-- Tab Content -->
+    <div class="search-content">
+      <div id="hotels-tab" class="tabcontent active" data-tab-content>
+        <form method="post">
+          <div class="row">
+            <div class="control">
+              <h4 class="size">Where</h4>
+              <h5>Destination</h5>
+              <input type="text" class="input-text" placeholder="Enter Your Destination" />
+            </div>
+            <div class="control">
+              <h4 class="size">When</h4>
+              <div class="row">
+                <div class="control">
+                  <h5>Check In</h5>
+                  <input type="date" class="input-text" placeholder="Enter Your Destination" />
+                </div>
+                <div class="control">
+                  <h5>Check Out</h5>
+                  <input type="date" class="input-text" placeholder="Enter Your Destination" />
+                </div>
+              </div>
+            </div>
+            <div class="control">
+              <h4 class="size">Who</h4>
+              <div class="row">
+                <div class="control">
+                  <h5>Rooms</h5>
+                  <!-- <input type="text" class="input-text" placeholder="Enter Your Destination"> -->
+                  <select class="full-width" name="room" id="room">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                  </select>
+                </div>
+                <div class="control">
+                  <h5>Adults</h5>
+                  <!-- <input type="text" class="input-text" placeholder="Enter Your Destination"> -->
+                  <select class="full-width" name="room" id="room">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                  </select>
+                </div>
+                <div class="control">
+                  <h5>Kids</h5>
+                  <!-- <input type="text" class="input-text" placeholder="Enter Your Destination"> -->
+                  <select class="full-width" name="room" id="room">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="control">
+              <p>&nbsp</p>
+              <p>&nbsp</p>
+              <button type="submit" class="btn">Search Now</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="flights-tab" class="tabcontent" data-tab-content>
+        <form method="post">
+          <div class="row">
+            <div class="control">
+              <h4 class="size">Where</h4>
+              <div>
+                <h5>Living From</h5>
+                <input type="text" class="input-text" placeholder="Enter Your Destination" />
+              </div>
+              <div>
+                <h5>Going To</h5>
+                <input type="text" class="input-text" placeholder="Enter Your Destination" />
+              </div>
+            </div>
+            <div class="control">
+              <h4 class="size">When</h4>
+              <div class="row">
+                <div class="control">
+                  <h5>Departing On</h5>
+                  <div class="row">
+                    <input type="date" class="input-text inpt" placeholder="Enter Your Destination" />
+                    <select class="full-width" name="room" id="room">
+                      <option value="anytime">anytime</option>
+                      <option value="Morning">Morning</option>
+                    </select>
+                  </div>
+                  <h5>Arriving on</h5>
+                  <div class="row">
+                    <input type="date" class="input-text inpt" placeholder="Enter Your Destination" />
+                    <select class="full-width" name="room" id="room">
+                      <option value="anytime">anytime</option>
+                      <option value="Morning">Morning</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="control">
+              <h4 class="size">Who</h4>
+              <div class="row">
+                <div class="control">
+                  <h5>Adults</h5>
+                  <select class="full-width" name="room" id="room">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                  </select>
+                </div>
+                <div class="control">
+                  <h5>Kids</h5>
+                  <select class="full-width" name="room" id="room">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                  </select>
+                </div>
+                <div class="control">
+                  <h5>Promo Code</h5>
+                  <input type="text" class="input-text" placeholder="Enter Your Destination" />
+                </div>
+              </div>
+              <div class="row row1">
+                <div class="control">
+                  <h5>Infants</h5>
+                  <select class="full-width" name="room" id="room">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                  </select>
+                </div>
+                <div class="control">
+                  <p>&nbsp</p>
+                  <button type="submit" class="btn">Search Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="flightandhotels-tab" class="tabcontent" data-tab-content>
+        <form method="post">
+          <div class="row">
+            <div class="control">
+              <h4 class="size">Where</h4>
+              <div>
+                <h5>Living From</h5>
+                <input type="text" class="input-text" placeholder="Enter Your Destination" />
+              </div>
+              <div>
+                <h5>Going To</h5>
+                <input type="text" class="input-text" placeholder="Enter Your Destination" />
+              </div>
+            </div>
+            <div class="control">
+              <h4 class="size">When</h4>
+              <div class="row">
+                <div class="control">
+                  <h5>Departing On</h5>
+                  <div class="row">
+                    <input type="date" class="input-text inpt" placeholder="Enter Your Destination" />
+                    <select class="full-width" name="room" id="room">
+                      <option value="anytime">anytime</option>
+                      <option value="Morning">Morning</option>
+                    </select>
+                  </div>
+                  <h5>Arriving on</h5>
+                  <div class="row">
+                    <input type="date" class="input-text inpt" placeholder="Enter Your Destination" />
+                    <select class="full-width" name="room" id="room">
+                      <option value="anytime">anytime</option>
+                      <option value="Morning">Morning</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="control">
+              <h4 class="size">Who</h4>
+              <div class="row">
+                <div class="control">
+                  <h5>Adults</h5>
+                  <select class="full-width" name="room" id="room">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                  </select>
+                </div>
+                <div class="control">
+                  <h5>Kids</h5>
+                  <select class="full-width" name="room" id="room">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                  </select>
+                </div>
+                <div class="control">
+                  <h5>Promo Code</h5>
+                  <input type="text" class="input-text" placeholder="Enter Your Destination" />
+                </div>
+              </div>
+              <div class="row row1">
+                <div class="control">
+                  <h5>Rooms</h5>
+                  <select class="full-width" name="room" id="room">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                  </select>
+                </div>
+                <div class="control">
+                  <p>&nbsp</p>
+                  <button type="submit" class="btn">Search Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="cars-tab" class="tabcontent" data-tab-content>
+        <form method="post">
+          <div class="row">
+            <div class="control">
+              <h4 class="size">Where</h4>
+              <div>
+                <h5>Pick Up</h5>
+                <input type="text" class="input-text" placeholder="Enter Your Destination" />
+              </div>
+              <div>
+                <h5>Drop off</h5>
+                <input type="text" class="input-text" placeholder="Enter Your Destination" />
+              </div>
+            </div>
+            <div class="control">
+              <h4 class="size">When</h4>
+              <div class="row">
+                <div class="control">
+                  <h5>Pick Up date/Time</h5>
+                  <div class="row">
+                    <input type="date" class="input-text inpt" placeholder="Enter Your Destination" />
+                    <select class="full-width" name="room" id="room">
+                      <option value="anytime">anytime</option>
+                      <option value="Morning">Morning</option>
+                    </select>
+                  </div>
+                  <h5>Drop off date/Time</h5>
+                  <div class="row">
+                    <input type="date" class="input-text inpt" placeholder="Enter Your Destination" />
+                    <select class="full-width" name="room" id="room">
+                      <option value="anytime">anytime</option>
+                      <option value="Morning">Morning</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="control">
+              <h4 class="size">Who</h4>
+              <div class="row">
+                <div class="control">
+                  <h5>Adults</h5>
+                  <select class="full-width" name="room" id="room">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                  </select>
+                </div>
+                <div class="control">
+                  <h5>Kids</h5>
+                  <select class="full-width" name="room" id="room">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                  </select>
+                </div>
+                <div class="control">
+                  <h5>Promo Code</h5>
+                  <input type="text" class="input-text" placeholder="Enter Your Destination" />
+                </div>
+              </div>
+              <div class="row row1">
+                <div class="control">
+                  <h5>Car Type</h5>
+                  <select class="full-width" name="room" id="room">
+                    <option value="Economy">Economy</option>
+                    <option value="Compact">Compact</option>
+                  </select>
+                </div>
+                <div class="control">
+                  <p>&nbsp</p>
+                  <button type="submit" class="btn">Search Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="cruises-tab" class="tabcontent" data-tab-content>
+        <form method="post">
+          <div class="row">
+            <div class="control">
+              <h4 class="size">Where</h4>
+              <h5>Your Destination</h5>
+              <input type="text" class="input-text" placeholder="Enter Your Destination" />
+            </div>
+            <div class="control">
+              <h4 class="size">When</h4>
+              <div class="row">
+                <div class="control">
+                  <h5>Departure Date</h5>
+                  <input type="date" class="input-text" placeholder="Enter Your Destination" />
+                </div>
+                <div class="control">
+                  <h5>Cruises Strenght</h5>
+                  <select class="full-width" name="room" id="room">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="control">
+              <h4 class="size">Who</h4>
+              <div class="row">
+                <div class="control">
+                  <h5>Cruise line</h5>
+                  <!-- <input type="text" class="input-text" placeholder="Enter Your Destination"> -->
+                  <select class="full-width" name="room" id="room">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="control">
+              <p>&nbsp</p>
+              <p>&nbsp</p>
+              <button type="submit" class="btn">Search Now</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="flightstatus-tab" class="tabcontent" data-tab-content>
+        <form method="post">
+          <div class="row">
+            <div class="control">
+              <h4 class="size">Where</h4>
+              <h5>Your Destination</h5>
+              <input type="text" class="input-text" placeholder="Enter Your Destination" />
+            </div>
+            <div class="control">
+              <h4 class="size">When</h4>
+              <div class="row">
+                <div class="control">
+                  <h5>Departure Date</h5>
+                  <input type="date" class="input-text" placeholder="Enter Your Destination" />
+                </div>
+                <div class="control">
+                  <h5>Cruises Strenght</h5>
+                  <select class="full-width" name="room" id="room">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="control">
+              <h4 class="size">Who</h4>
+              <div class="row">
+                <div class="control">
+                  <h5>Cruise line</h5>
+                  <!-- <input type="text" class="input-text" placeholder="Enter Your Destination"> -->
+                  <select class="full-width" name="room" id="room">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="control">
+              <p>&nbsp</p>
+              <p>&nbsp</p>
+              <button type="submit" class="btn">Search Now</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="onlinecheckin-tab" class="tabcontent" data-tab-content>
+        <form method="post">
+          <div class="row">
+            <div class="control">
+              <h4 class="size">Where</h4>
+              <h5>Your Destination</h5>
+              <input type="text" class="input-text" placeholder="Enter Your Destination" />
+            </div>
+            <div class="control">
+              <h4 class="size">When</h4>
+              <div class="row">
+                <div class="control">
+                  <h5>Departure Date</h5>
+                  <input type="date" class="input-text" placeholder="Enter Your Destination" />
+                </div>
+                <div class="control">
+                  <h5>Cruises Strenght</h5>
+                  <select class="full-width" name="room" id="room">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="control">
+              <h4 class="size">Who</h4>
+              <div class="row">
+                <div class="control">
+                  <h5>Cruise line</h5>
+                  <!-- <input type="text" class="input-text" placeholder="Enter Your Destination"> -->
+                  <select class="full-width" name="room" id="room">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="control">
+              <p>&nbsp</p>
+              <p>&nbsp</p>
+              <button type="submit" class="btn">Search Now</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- responsive search Start -->
+  <div class="res-search">
+    <div class="res-tabs">
+      <li class="tablink active" onclick="openTab(event,'hotels')">Hotels</li>
+      <li class="tablink" onclick="openTab(event,'flight')">Flights</li>
+      <li class="tablink" onclick="openTab(event,'Flight-and-Hotels')">
+        Flight and Hotels
+      </li>
+      <li class="tablink" onclick="openTab(event,'Cars')">Cars</li>
+      <li class="tablink" onclick="openTab(event,'Cruises')">Cruises</li>
+      <li class="tablink" onclick="openTab(event,'Flight-status')">
+        Flight status
+      </li>
+      <li class="tablink" onclick="openTab(event,'Online-Check')">
+        Online Check In
+      </li>
+    </div>
+    <div id="hotels" class="tabcontent" style="display: block;">
+      <form method="post">
+        <div class="row">
+          <div class="control">
+            <h4 class="size">Where</h4>
+            <h5>Your Destination</h5>
+            <input type="text" class="input-text" placeholder="Enter Your Destination" />
+          </div>
+          <div class="control">
+            <h4 class="size">When</h4>
+            <div class="row1">
+              <div class="control">
+                <h5>Check In</h5>
+                <input type="date" class="input-text" placeholder="Enter Your Destination" />
+              </div>
+              <div class="control">
+                <h5>Check Out</h5>
+                <input type="date" class="input-text" placeholder="Enter Your Destination" />
+              </div>
+            </div>
+          </div>
+          <div class="control">
+            <h4 class="size">Who</h4>
+            <div class="row1">
+              <div class="control1">
+                <h5>Rooms</h5>
+                <!-- <input type="text" class="input-text" placeholder="Enter Your Destination"> -->
+                <select class="full-width" name="room" id="room">
+                  <option value="1">01</option>
+                  <option value="2">02</option>
+                  <option value="3">03</option>
+                  <option value="4">04</option>
+                </select>
+              </div>
+              <div class="control1">
+                <h5>Adults</h5>
+                <!-- <input type="text" class="input-text" placeholder="Enter Your Destination"> -->
+                <select class="full-width" name="room" id="room">
+                  <option value="1">01</option>
+                  <option value="2">02</option>
+                  <option value="3">03</option>
+                  <option value="4">04</option>
+                </select>
+              </div>
+              <div class="control1">
+                <h5>Kids</h5>
+                <select class="full-width" name="room" id="room">
+                  <option value="1">01</option>
+                  <option value="2">02</option>
+                  <option value="3">03</option>
+                  <option value="4">04</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="control">
+            <p>&nbsp</p>
+            <button type="submit" class="btn">Search Now</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="flight" class="tabcontent">
+      <form method="post">
+        <div class="row">
+          <div class="control">
+            <h4 class="size">Where</h4>
+            <h5>Living From</h5>
+            <input type="text" class="input-text" placeholder="Enter Your Destination" />
+            <h5>Going To</h5>
+            <input type="text" class="input-text" placeholder="Enter Your Destination" />
+          </div>
+          <div class="control">
+            <h4 class="size">When</h4>
+            <div class="row1">
+              <div class="control">
+                <h5>DEPARTING ON</h5>
+                <div class="res-cont">
+                  <input type="date" class="input-text" placeholder="Enter Your Destination" />
+                  <select class="full-width" name="room" id="room">
+                    <option value="anytime">anytime</option>
+                    <option value="Morning">Morning</option>
+                  </select>
+                </div>
+                <h5>ARRIVING ON</h5>
+                <div class="res-cont">
+                  <input type="date" class="input-text" placeholder="Enter Your Destination" />
+                  <select class="full-width" name="room" id="room">
+                    <option value="anytime">anytime</option>
+                    <option value="Morning">Morning</option>
+                  </select>
+                </div>
+                <div class="control"></div>
+              </div>
+            </div>
+          </div>
+          <div class="control">
+            <h4 class="size">Who</h4>
+            <div class="row1">
+              <div class="control1">
+                <h5>Rooms</h5>
+                <!-- <input type="text" class="input-text" placeholder="Enter Your Destination"> -->
+                <select class="full-width" name="room" id="room">
+                  <option value="1">01</option>
+                  <option value="2">02</option>
+                  <option value="3">03</option>
+                  <option value="4">04</option>
+                </select>
+              </div>
+              <div class="control1">
+                <h5>Adults</h5>
+                <!-- <input type="text" class="input-text" placeholder="Enter Your Destination"> -->
+                <select class="full-width" name="room" id="room">
+                  <option value="1">01</option>
+                  <option value="2">02</option>
+                  <option value="3">03</option>
+                  <option value="4">04</option>
+                </select>
+              </div>
+              <div class="control1">
+                <h5>ROOMS</h5>
+                <select class="full-width" name="room" id="room">
+                  <option value="1">01</option>
+                  <option value="2">02</option>
+                  <option value="3">03</option>
+                  <option value="4">04</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="control">
+            <h5>PROMO CODE</h5>
+            <input type="text" class="input-text" placeholder="Enter Promo Code" />
+          </div>
+          <div class="control">
+            <p>&nbsp</p>
+            <button type="submit" class="btn">Search Now</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="Flight-and-Hotels" class="tabcontent">
+      <form method="post">
+        <div class="row">
+          <div class="control">
+            <h4 class="size">Where</h4>
+            <h5>Living From</h5>
+            <input type="text" class="input-text" placeholder="Enter Your Destination" />
+            <h5>Going To</h5>
+            <input type="text" class="input-text" placeholder="Enter Your Destination" />
+          </div>
+          <div class="control">
+            <h4 class="size">When</h4>
+            <div class="row1">
+              <div class="control">
+                <h5>DEPARTING ON</h5>
+                <div class="res-cont">
+                  <input type="date" class="input-text" placeholder="Enter Your Destination" />
+                  <select class="full-width" name="room" id="room">
+                    <option value="anytime">anytime</option>
+                    <option value="Morning">Morning</option>
+                  </select>
+                </div>
+                <h5>ARRIVING ON</h5>
+                <div class="res-cont">
+                  <input type="date" class="input-text" placeholder="Enter Your Destination" />
+                  <select class="full-width" name="room" id="room">
+                    <option value="anytime">anytime</option>
+                    <option value="Morning">Morning</option>
+                  </select>
+                </div>
+                <div class="control"></div>
+              </div>
+            </div>
+          </div>
+          <div class="control">
+            <h4 class="size">Who</h4>
+            <div class="row1">
+              <div class="control1">
+                <h5>Rooms</h5>
+                <!-- <input type="text" class="input-text" placeholder="Enter Your Destination"> -->
+                <select class="full-width" name="room" id="room">
+                  <option value="1">01</option>
+                  <option value="2">02</option>
+                  <option value="3">03</option>
+                  <option value="4">04</option>
+                </select>
+              </div>
+              <div class="control1">
+                <h5>Adults</h5>
+                <!-- <input type="text" class="input-text" placeholder="Enter Your Destination"> -->
+                <select class="full-width" name="room" id="room">
+                  <option value="1">01</option>
+                  <option value="2">02</option>
+                  <option value="3">03</option>
+                  <option value="4">04</option>
+                </select>
+              </div>
+              <div class="control1">
+                <h5>INFANTS</h5>
+                <select class="full-width" name="room" id="room">
+                  <option value="1">01</option>
+                  <option value="2">02</option>
+                  <option value="3">03</option>
+                  <option value="4">04</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="control">
+            <h5>PROMO CODE</h5>
+            <input type="text" class="input-text" placeholder="Enter Promo Code" />
+          </div>
+          <div class="control">
+            <p>&nbsp</p>
+            <button type="submit" class="btn">Search Now</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="Cars" class="tabcontent">
+      <form method="post">
+        <div class="row">
+          <div class="control">
+            <h4 class="size">Where</h4>
+            <h5>PICK UP</h5>
+            <input type="text" class="input-text" placeholder="Enter Your Destination" />
+            <h5>DROP OFF</h5>
+            <input type="text" class="input-text" placeholder="Enter Your Destination" />
+          </div>
+          <div class="control">
+            <h4 class="size">When</h4>
+            <div class="row1">
+              <div class="control">
+                <h5>PICK UP DATE/TIME</h5>
+                <div class="res-cont">
+                  <input type="date" class="input-text" placeholder="Enter Your Destination" />
+                  <select class="full-width" name="room" id="room">
+                    <option value="anytime">anytime</option>
+                    <option value="Morning">Morning</option>
+                  </select>
+                </div>
+                <h5>DROP OFF DATE/TIME</h5>
+                <div class="res-cont">
+                  <input type="date" class="input-text" placeholder="Enter Your Destination" />
+                  <select class="full-width" name="room" id="room">
+                    <option value="anytime">anytime</option>
+                    <option value="Morning">Morning</option>
+                  </select>
+                </div>
+                <div class="control"></div>
+              </div>
+            </div>
+          </div>
+          <div class="control">
+            <h4 class="size">Who</h4>
+            <div class="row1">
+              <div class="control1">
+                <h5>Rooms</h5>
+                <!-- <input type="text" class="input-text" placeholder="Enter Your Destination"> -->
+                <select class="full-width" name="room" id="room">
+                  <option value="1">01</option>
+                  <option value="2">02</option>
+                  <option value="3">03</option>
+                  <option value="4">04</option>
+                </select>
+              </div>
+              <div class="control1">
+                <h5>Adults</h5>
+                <!-- <input type="text" class="input-text" placeholder="Enter Your Destination"> -->
+                <select class="full-width" name="room" id="room">
+                  <option value="1">01</option>
+                  <option value="2">02</option>
+                  <option value="3">03</option>
+                  <option value="4">04</option>
+                </select>
+              </div>
+              <div class="control1">
+                <h5>Car Type</h5>
+                <select class="full-width" name="room" id="room">
+                  <option value="Economy">Economy</option>
+                  <option value="Compact">Compact</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="control">
+            <h5>PROMO CODE</h5>
+            <input type="text" class="input-text" placeholder="Enter Promo Code" />
+          </div>
+          <div class="control">
+            <p>&nbsp</p>
+            <button type="submit" class="btn">Search Now</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="Cruises" class="tabcontent">
+      <form method="post">
+        <div class="row">
+          <div class="control">
+            <h5 class="size">Where</h5>
+            <h4>Your Destination</h4>
+            <input type="text" class="input-text" placeholder="Enter Your Destination" />
+          </div>
+          <div class="control">
+            <h4 class="size">When</h4>
+            <div class="row1">
+              <div class="control">
+                <h5>DEPARTURE DATE</h5>
+                <input type="date" class="input-text" placeholder="Enter Your Destination" />
+              </div>
+              <div class="control">
+                <h5>CRUISE LENGTH</h5>
+                <select class="full-width" name="room" id="room">
+                  <option value="1-2 Nights">1-2 Nights</option>
+                  <option value="3-4 Nights">3-4 Nights</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="control">
+            <h4 class="size">Who</h4>
+            <div class="row1">
+              <div class="control1 wdth">
+                <h4>CRUISE LINE</h5>
+                  <!-- <input type="text" class="input-text" placeholder="Enter Your Destination"> -->
+                  <select class="full-width" name="room" id="room">
+                    <option value="Lorem, ipsum dolor.">Lorem, ipsum dolor.</option>
+                    <option value="Lorem, ipsum dolor.">Lorem, ipsum dolor.</option>
+                    <option value="Lorem, ipsum dolor.">Lorem, ipsum dolor.</option>
+                    <option value="Lorem, ipsum dolor.">Lorem, ipsum dolor.</option>
+                    <option value="Lorem, ipsum dolor.">Lorem, ipsum dolor.</option>
+                  </select>
+              </div>
+            </div>
+          </div>
+          <div class="control">
+            <p>&nbsp</p>
+            <button type="submit" class="btn">Search Now</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="Flight-status" class="tabcontent">
+      <form method="post">
+        <div class="row">
+          <div class="control">
+            <h5 class="size">Where</h5>
+            <h4>LEAVING FROM</h4>
+            <input type="text" class="input-text" placeholder="Enter Your Destination" />
+            <h4>GOING TO</h4>
+            <input type="text" class="input-text" placeholder="Enter Your Destination" />
+          </div>
+          <div class="control">
+            <h4 class="size">When</h4>
+            <div class="row1">
+              <div class="control">
+                <h5>DEPARTURE DATE</h5>
+                <input type="date" class="input-text" placeholder="Enter Your Destination" />
+              </div>
+            </div>
+          </div>
+          <div class="control">
+            <h4 class="size">Who</h4>
+            <div class="row1">
+              <div class="control1 wdth">
+                <h4>FLIGHT NUMBER</h5>
+                  <input type="text" class="input-text" placeholder="Enter Your Destination">
+              </div>
+            </div>
+          </div>
+          <div class="control">
+            <p>&nbsp</p>
+            <button type="submit" class="btn">Search Now</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="Online-Check" class="tabcontent">
+      <form method="post">
+        <div class="row">
+          <div class="control">
+            <h5 class="size">Where</h5>
+            <h4>LEAVING FROM</h4>
+            <input type="text" class="input-text" placeholder="Enter Your Destination" />
+            <h4>GOING TO</h4>
+            <input type="text" class="input-text" placeholder="Enter Your Destination" />
+          </div>
+          <div class="control">
+            <h4 class="size">When</h4>
+            <div class="row1">
+              <div class="control">
+                <h5>DEPARTURE DATE</h5>
+                <input type="date" class="input-text" placeholder="Enter Your Destination" />
+              </div>
+            </div>
+          </div>
+          <div class="control">
+            <h4 class="size">Who</h4>
+            <div class="row1">
+              <div class="control1 wdth">
+                <h5>FLIGHT NUMBER</h5>
+                <input type="text" class="input-text" placeholder="Enter Your Destination">
+              </div>
+            </div>
+          </div>
+          <div class="control">
+            <p>&nbsp</p>
+            <button type="submit" class="btn">Search Now</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- responsive search END -->
+
+  <!-- Search Tabs Ends -->
+
+  <!-- Destination Start -->
+  <div class="destination">
+    <div class="dest">
+      <h1>Popular Destinations</h1>
+      <div class="cards">
+        <div class="card">
+          <img src="./images/card1.jpg" width="300" height="160" />
+          <div class="detail">
+            <h3 class="title">
+              <a href="#">Atlantis- The Palm</a><br /><small>Paris</small>
+            </h3>
+            <span class="price"><small>From</small><br />$500</span>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/card2.jpg" width="300" height="160" />
+          <div class="detail">
+            <h3 class="title">
+              <a href="#">Atlantis- The Palm</a><br /><small>Paris</small>
+            </h3>
+            <span class="price"><small>From</small><br />$500</span>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/card3.jpg" width="300" height="160" />
+          <div class="detail">
+            <h3 class="title">
+              <a href="#">Atlantis- The Palm</a><br /><small>Paris</small>
+            </h3>
+            <span class="price"><small>From</small><br />$500</span>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/card4.jpg" width="300" height="160" />
+          <div class="detail">
+            <h3 class="title">
+              <a href="#">Atlantis- The Palm</a><br /><small>Paris</small>
+            </h3>
+            <span class="price"><small>From</small><br />$500</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Destination Ends -->
+
+  <!-- Honeymoon Destination Start -->
+  <div class="honymoon">
+    <div class="hony">
+      <div class="res-hony"><img src="./images/couple.png" /></div>
+      <div class="honydest">
+        <h1>Popular Destinations for Honeymoon</h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+          magnam deserunt molestias esse temporibus quas neque dolorem porro
+          aspernatur sapiente?
+        </p>
+        <div class="honycards">
+          <div class="honycard">
+            <img src="./images/card5.jpg" width="100%" height="200" />
+            <div class="honydetail">
+              <h4>Paris</h4>
+              <p><small>(990 places)</small></p>
+              <a href="#"><small>SEE ALL</small></a>
+            </div>
+          </div>
+          <div class="honycard">
+            <img src="./images/card6.jpg" width="100%" height="200" />
+            <div class="honydetail">
+              <h4>Paris</h4>
+              <p><small>(990 places)</small></p>
+              <a href="#"><small>SEE ALL</small></a>
+            </div>
+          </div>
+          <div class="honycard">
+            <img src="./images/card7.jpg" width="100%" height="200" />
+            <div class="honydetail">
+              <h4>Paris</h4>
+              <p><small>(990 places)</small></p>
+              <a href="#"><small>SEE ALL</small></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Honeymoon Destination End -->
+
+  <!-- Did You Know Section Start -->
+  <div class="offers">
+    <div class="offer">
+      <div class="toptext">
+        <h1 class="text">Did You Know</h1>
+        <p class="text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Voluptatibus beatae earum ad, veritatis dolorem, voluptatum dicta ea
+          quis nostrum consequuntur minima magni dignissimos. Iusto odit
+          aspernatur reiciendis deserunt eius nobis.
+        </p>
+      </div>
+      <div class="boxes">
+        <div class="offer-box">
+          <div class="box1">
+            <img src="./images/card8.jpg" width="100%" height="200" />
+            <div class="box-detail">
+              <h4>Hire Car</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
+                et totam voluptates, temporibus error quasi.
+              </p>
+              <a href="#"><small>SEE ALL</small></a>
+            </div>
+          </div>
+          <div class="box1">
+            <img src="./images/card9.jpg" width="100%" height="200" />
+            <div class="box-detail">
+              <h4>Hire Car</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
+                et totam voluptates, temporibus error quasi.
+              </p>
+              <a href="#"><small>SEE ALL</small></a>
+            </div>
+          </div>
+        </div>
+        <div class="offer-box">
+          <div class="box1">
+            <img src="./images/card10.jpg" width="100%" height="200" />
+            <div class="box-detail">
+              <h4>Hire Car</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
+                et totam voluptates, temporibus error quasi.
+              </p>
+              <a href="#"><small>SEE ALL</small></a>
+            </div>
+          </div>
+          <div class="box1">
+            <img src="./images/card11.jpg" width="100%" height="200" />
+            <div class="box-detail">
+              <h4>Hire Car</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
+                et totam voluptates, temporibus error quasi.
+              </p>
+              <a href="#"><small>SEE ALL</small></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Did You Know Section End -->
+  <!-- Feature Part Start -->
+  <div class="features">
+    <div class="fetur">
+      <div class="Fcards">
+        <div class="Fcard">
+          <img src="./images/card1.jpg" width="300" height="80" />
+          <div class="Fdetail">
+            <h3 class="title">
+              <a href="#">Best Price Guarantee</a>
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+              assumenda autem ipsum provident laudantium sint,
+            </p>
+          </div>
+        </div>
+        <div class="Fcard">
+          <img src="./images/card2.jpg" width="300" height="80" />
+          <div class="Fdetail">
+            <h3 class="title">
+              <a href="#">Best Price Guarantee</a>
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+              assumenda autem ipsum provident laudantium sint,
+            </p>
+          </div>
+        </div>
+        <div class="Fcard">
+          <img src="./images/card3.jpg" width="300" height="80" />
+          <div class="Fdetail">
+            <h3 class="title">
+              <a href="#">Best Price Guarantee</a>
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+              assumenda autem ipsum provident laudantium sint,
+            </p>
+          </div>
+        </div>
+        <div class="Fcard">
+          <img src="./images/card4.jpg" width="300" height="80" />
+          <div class="Fdetail">
+            <h3 class="title">
+              <a href="#">Best Price Guarantee</a>
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+              assumenda autem ipsum provident laudantium sint,
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Feature Part End -->
+  <!-- Footer section -->
+  <footer class="footer">
+    <div class="footer-row">
+      <div class="footer-list">
+        <h2>Discover</h2>
+        <div class="flex-ullist">
+          <ul class="Dlist">
+            <li><a href="#">Mobile</a></li>
+            <li><a href="#">Mobile</a></li>
+            <li><a href="#">Mobile</a></li>
+            <li><a href="#">Mobile</a></li>
+            <li><a href="#">Mobile</a></li>
+            <li><a href="#">Mobile</a></li>
+          </ul>
+          <ul class="Dlist">
+            <li><a href="#">Mobile</a></li>
+            <li><a href="#">Mobile</a></li>
+            <li><a href="#">Mobile</a></li>
+            <li><a href="#">Mobile</a></li>
+            <li><a href="#">Mobile</a></li>
+            <li><a href="#">Mobile</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-list">
+        <h2>Travel News</h2>
+        <div class="flex-list">
+          <div class="news">
+            <img src="./images/card6.jpg" width="63" height="63" />
+            <div class="news-title">
+              <h3>Amezing Places</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>25 Sep, 2013</p>
+            </div>
+          </div>
+          <div class="news">
+            <img src="./images/card7.jpg" width="63" height="63" />
+            <div class="news-title">
+              <h3>Amezing Places</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>25 Sep, 2013</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-list">
+        <h2>Mailing List</h2>
+        <br />
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <br />
+        <input type="text" placeholder="Your Email" />
+        <br />
+        <br />
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="footer-list">
+        <h2>About</h2>
+        <br />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, culpa.
+        </p>
+        <br />
+        <address class="phone">
+          <span class="call"><i class="fas fa-phone-volume"></i>1-800-123-356</span>
+          <br />
+          <br />
+          <a href="#">help@gmail.com</a>
+        </address>
+        <br />
+        <br />
+        <div class="social">
+          <ul class="social-icon">
+            <li class="icon">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li class="icon">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li class="icon">
+              <a href="#"><i class="fab fa-facebook-square"></i></a>
+            </li>
+            <li class="icon">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="bottom-footer">
+    <div class="bootom">
+      <h1><img src="./images/logo.png" alt="Travel guide" width="100" height="80" /></h1>
+      <p>
+        &copy; 2022 Travel guide
+      </p>
+    </div>
+  </div>
+  <div class="arrow">
+    <a href="#"><i class="far fa-arrow-alt-circle-up"></i></a>
+  </div>
+  <!-- custom js -->
+  <script src="./main.js"></script>
+</body>
+
+</html>
